@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar color="primary-dark">
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Filtros</ion-title>
+    <ion-buttons right>
+      <button ion-button>
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Empresa</ion-label>
+      <ion-select>
+        <ion-option value="1">
+          Cencosud
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Región</ion-label>
+      <ion-select>
+        <ion-option value="1" >
+          Buenos Aires
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Centro Costo</ion-label>
+      <ion-select>
+        <ion-option value="1">
+          217 Centro de distribución Ezeiza
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo Reclamo</ion-label>
+      <ion-select>
+        <ion-option [value]="item.idTipoReclamo" *ngFor="let item of tipoReclamoList">
+          {{item.descripcion}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Estado</ion-label>
+      <ion-select>
+        <ion-option value="-1">--Todos--</ion-option>
+        <ion-option value="1">Generado</ion-option>
+        <ion-option value="2">Analizado</ion-option>
+        <ion-option value="3">Derivado</ion-option>
+        <ion-option value="4">Cerrado</ion-option>
+        <ion-option value="5">Anulado</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item (click)="openCalendar();">
+      <ion-label>{{fecha}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

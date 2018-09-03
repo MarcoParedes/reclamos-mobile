@@ -1,0 +1,39 @@
+{
+    "TipoReclamo": [
+        {
+            "idTipoReclamo": 1,
+            "descripcion": "Rotura"
+        },
+        {
+            "idTipoReclamo": 2,
+            "descripcion": "Faltante Mercadería"
+        },
+        {
+            "idTipoReclamo": 3,
+            "descripcion": "Mercadería vencida"
+        },
+        {
+            "idTipoReclamo": 4,
+            "descripcion": "Diferencia UxB"
+        },
+        {
+            "idTipoReclamo": 5,
+            "descripcion": "Problemas de temperatura"
+        },
+        {
+            "idTipoReclamo": 6,
+            "descripcion": "Sobrante UL - Tranf Compl"
+        },
+        {
+            "idTipoReclamo": 7,
+            "descripcion": "Calidad"
+        }
+    ],
+    "Transferencias": [
+        {
+            "id": "1",
+            "prefijo": "0045",
+            "nroTransferencia": "00004587"
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+$lt-gray: #ddd;
+$background-primary: #2196F3;
+$background-dark: #0d47a1;
+$background-light: #BBDEFB;
+$background-pale: #FF5722;
+
+.background-dark {
+    background-color: $background-dark;
+}
+
+.background-light {
+    background-color: $background-light;
+    color: #fff;
+}
+
+.radio {
+    display: inline-flex;
+}
+
+.radio .item {
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.formulario {
+    padding-left: 0px !important;
+}
+
+.body {
+    font-size: 13px;
+    text-align: center;
+}
+
+.body .col {
+    border-bottom: solid 1px #eee;
+}
+
+
+.header-divider {
+    border-bottom: 2px solid #000;
+    border-bottom-color: #0d47a1;
+}
+
+.text-warning {
+    color: #f57f17 !important;
+}
+
+.text-success {
+    color: #00c853 !important;
+}
+
+.text-info {
+    color: #2196F3 !important;
+}
+
+
+.lst-reclamos .item-md .item-inner{
+    margin-left: 10px !important;
+}
+
+.size-13 {
+    font-size: 13px !important;
+}

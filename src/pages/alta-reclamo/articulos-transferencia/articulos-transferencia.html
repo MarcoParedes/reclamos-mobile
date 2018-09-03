@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary-dark">
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Artículos</ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="Seleccionar()">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of articulos">
+      <ion-label>
+          <h3>{{item.scanning}}</h3>
+          <p>{{item.descripcion}}</p>
+          <p>Cantidad: {{item.cantidad}}</p>
+      </ion-label>
+      <ion-checkbox [(ngModel)]="item.selected" item-start color="orange" checked="false"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-fab right bottom (click)="Seleccionar()">
+    <button ion-fab mini>
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+  </ion-fab> -->
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "reclamosMobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

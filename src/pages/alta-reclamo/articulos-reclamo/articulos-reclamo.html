@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary-dark">
+    <ion-title>Artículos Reclamo</ion-title>
+    <ion-buttons right>
+      <button ion-button>
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of articulos" (click)="showPrompt(item)">
+      <h2>{{item.scanning}}</h2>
+      <p>{{item.descripcion}}</p>
+    </button>
+  </ion-list>
+</ion-content>

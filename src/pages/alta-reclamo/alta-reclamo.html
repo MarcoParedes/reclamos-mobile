@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar color="primary-dark">
+    
+    <ion-title>Nuevo Reclamo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-card>
+    <ion-card-content class="formulario"> -->
+      <ion-row>
+        <ion-col col-12 col-md-6>
+          <ion-item>
+            <ion-input type="text" placeholder="NroTransferencia" [(ngModel)]="transferenciaDesc"></ion-input>
+            <button ion-button item-right color="primary" (click)="openTransferencia()">
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-col>
+        <ion-col col-12 col-md-6>
+          <ion-item>
+            <ion-input type="text" placeholder="Scanning" [(ngModel)]="scanning"></ion-input>
+            <button ion-button item-right color="primary" (click)="openArticulos()">
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-list>
+            <ion-item>
+              <ion-label>Tipo Reclamo</ion-label>
+              <ion-select [(ngModel)]="tipoReclamo">
+                <ion-option value="nes">Mercadería vencida</ion-option>
+                <ion-option value="n64">Rotura</ion-option>
+                <ion-option value="ps">Faltante</ion-option>
+                <ion-option value="genesis">Calidad</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item>
+            <ion-label>Fecha vencimiento</ion-label>
+            <ion-datetime displayFormat="DD MMM, YYYY" [(ngModel)]="myDate"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 col-md-6>
+          <ion-item>
+            <ion-input type="number" min="0" placeholder="Cantidad"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col text-center col-12 col-md-6>
+          <ion-list radio-group class="radio">
+            <ion-item>
+              <ion-label>Unidad</ion-label>
+              <ion-radio color="orange" checked="true" value="unidad"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Bultos</ion-label>
+              <ion-radio color="orange" checked="false" value="bultos"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>Kilos</ion-label>
+              <ion-radio color="orange" checked="false" value="kilos"></ion-radio>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    <!-- </ion-card-content> -->
+    <ion-row>
+      <ion-col>
+        <button ion-button full color="success">
+          Agregar
+        </button>
+      </ion-col>
+    </ion-row>
+  <!-- </ion-card> -->
+
+  <ion-fab right bottom>
+    <button ion-fab mini color="primary-dark">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+  </ion-fab>
+
+</ion-content>
+
+<!-- 
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-buttons>
+      <button ion-button icon-start color="dark">
+        <ion-icon name="close"></ion-icon>
+        Cancelar
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-end color="primary-dark">
+        Grabar
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->

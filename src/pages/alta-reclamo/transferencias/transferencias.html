@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="primary-dark">
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Transferencias</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="Seleccionar($event, item)">
+      <h2>
+         {{item.cc}}
+      </h2>
+      <p>{{item.transferenciaDesc}}</p>
+      <p>{{item.fechaGeneracion | date:'dd/MM/yyyy'}}</p>
+    </button>
+  </ion-list>
+
+</ion-content>

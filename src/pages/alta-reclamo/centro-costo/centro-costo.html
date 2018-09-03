@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar color="primary-dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Centros de Costo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-row>
+    <ion-col col-sm-6 col-12>
+      <ion-list>
+        <ion-list-header color="silver">
+          <ion-label color="secondary">Origen</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Empresa</ion-label>
+          <ion-select [(ngModel)]="empresa">
+            <ion-option value="f">Cencosud</ion-option>
+            <ion-option value="m">Disco</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Region</ion-label>
+          <ion-select [(ngModel)]="region">
+            <ion-option value="f">Buenos Aires</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Centro Costo</ion-label>
+          <ion-select [(ngModel)]="origen">
+            <ion-option value="f">1 San Isidro</ion-option>
+            <ion-option value="l">2 Talcahuano</ion-option>
+            <ion-option value="m">3 Camacua</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <ion-col col-sm-6 col-12>
+      <ion-list>
+        <ion-list-header color="silver">
+          <ion-label color="secondary">Destino</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Empresa</ion-label>
+          <ion-select [(ngModel)]="empresa-destino">
+            <ion-option value="f">Cencosud</ion-option>
+            <ion-option value="m">Disco</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Region</ion-label>
+          <ion-select [(ngModel)]="region-destino">
+            <ion-option value="f">Buenos Aires</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Centro Costo</ion-label>
+          <ion-select>
+            <ion-option value="f">1 San Isidro</ion-option>
+            <ion-option value="r">2 Talcahuano</ion-option>
+            <ion-option value="m">3 Camacua</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col offset-sm-4 col-sm-4 col-12>
+      <button ion-button full color="orange" (click)="NuevoReclamo()">
+          Aceptar
+        </button>
+    </ion-col>
+  </ion-row>
+  
+
+</ion-content>

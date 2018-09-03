@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary-dark">
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Formulario</ion-title>
+    <ion-buttons right>
+      <button ion-button>
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding> 
+
+  <ion-list radio-group>
+    <ion-list-header color="silver">
+      <ion-label color="secondary">Tipo Reclamo</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of tipoReclamoList">
+      <ion-label>{{item.descripcion}}</ion-label>
+      <ion-radio checked="false" [value]="item.idTipoReclamo"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label floating>Cantidad</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-content>
+      <img src="{{image}}" />
+    </ion-card-content>
+
+    <ion-item>
+      <button ion-button clear item-start (click)="getFromLibrary()">
+        Galería
+      </button>
+      <button ion-button clear item-end (click)="getPicture()">
+        Cámara
+      </button>
+    </ion-item>
+  </ion-card>
+
+  <!-- <ion-fab right bottom>
+    <button ion-fab mini>
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+  </ion-fab> -->
+
+</ion-content>
