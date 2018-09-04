@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, ViewController, AlertController } from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
 
@@ -13,43 +13,51 @@ import { Articulo } from "../../../models/articulo";
 })
 export class ArticulosTransferenciaPage {
 
-  private transferencias: Array<Transferencia>;
   private articulos: Array<Articulo>;
   private nroTransferencia: string;
   
   constructor(private storage: Storage, private navCtrl: NavController,
-    private viewCtrl: ViewController) {
-      this.nroTransferencia = viewCtrl.data.nroTransferencia;
-      this.ObtenerTransferencias();
+    private viewCtrl: ViewController,
+    private alertCtrl: AlertController) {
+      this.articulos = viewCtrl.data.articulos;
+      if (this.articulos != null) {
+        this.articulos.map(x => x.selected = false);
+      }
   }
 
-  private ObtenerTransferencias() {
-    // this.transferencias = JSON.parse(localStorage.getItem("transferencias"));
-    this.storage.get('transferencias')
-      .then(data => {
-        this.transferencias = data;
-        this.obtenerArticulos();
-      });
-  }
-
-  private obtenerArticulos() {
-    this.articulos =  this.transferencias
-                        .filter(x => x.transferenciaDesc == this.nroTransferencia)[0].articulos;
-  }
 
   private Seleccionar() {
     let items = this.articulos.filter(x => x.selected);
-    this.viewCtrl.dismiss(items);
-    // let count = items.length;
-    // if (count > 1) {
-    //   //this.viewCtrl.dismiss(items);
-    // } else {
-    //   //this.viewCtrl.dismiss(items);
-    // }
+    if (items.length > 0) {
+      this.viewCtrl.dismiss(items); 
+    }else {
+      this.showAlert('Advertencia', 'Debe seleccionar al menos un artículo.');
+    }
   }
 
-  private getItems($event): void {
-    console.log($event);
+  private showAlert(title: string, message: string): void {
+    const alert = this.alertCtrl.create({
+      title: title,
+      subTitle: message,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  private getItems(ev: any): void {
+    
+    // // set val to the value of the searchbar
+    // const val = ev.target.value;
+
+    // console.log(val);
+
+    // // if the value is an empty string don't filter the items
+    // if (val && val.trim() != '') {
+    //   this.articulos = this.articulos.filter((item) => {
+    //     console.log(item);
+    //     return (item.descripcion.toLowerCase().indexOf(val.toLowerCase()) > -1);
+    //   })
+    // }
   }
 
   private dismiss() {

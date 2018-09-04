@@ -11,10 +11,19 @@
 
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of articulos" (click)="showPrompt(item)">
-      <h2>{{item.scanning}}</h2>
-      <p>{{item.descripcion}}</p>
-    </button>
+  <ion-list *ngIf="detalleReclamoList">
+    <ion-item-sliding *ngFor="let detalle of detalleReclamoList" #item>
+        <button ion-item (click)="showPrompt(detalle)">
+            <h2>{{ detalle.articulo.scanning }}</h2>
+            <p>{{ detalle.articulo.descripcion }}</p>
+            <p *ngIf="detalle.tipoReclamo" class="text-success">{{ detalle.tipoReclamo.descripcion }}</p>
+            <p *ngIf="detalle.cantidad" class="text-success">Unidades: {{ detalle.cantidad }} </p>
+        </button>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="QuitarArticulo(detalle)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>

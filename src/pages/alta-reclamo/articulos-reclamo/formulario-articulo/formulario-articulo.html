@@ -7,7 +7,7 @@
     </ion-buttons>
     <ion-title>Formulario</ion-title>
     <ion-buttons right>
-      <button ion-button>
+      <button ion-button (click)="Aceptar()">
         <ion-icon name="send"></ion-icon>
       </button>
     </ion-buttons>
@@ -17,7 +17,7 @@
 
 <ion-content padding> 
 
-  <ion-list radio-group>
+  <ion-list radio-group [(ngModel)]="idTipoReclamo">
     <ion-list-header color="silver">
       <ion-label color="secondary">Tipo Reclamo</ion-label>
     </ion-list-header>
@@ -29,7 +29,7 @@
 
   <ion-item>
     <ion-label floating>Cantidad</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="cantidad"></ion-input>
   </ion-item>
 
   <ion-card>

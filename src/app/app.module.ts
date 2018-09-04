@@ -26,6 +26,7 @@ import { FiltroReclamoPage } from "../pages/adm-reclamos/filtro-reclamo/filtro-r
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TiporeclamoProvider } from '../providers/tiporeclamo/tiporeclamo';
+import { TransferenciaProvider } from '../providers/transferencia/transferencia';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { TiporeclamoProvider } from '../providers/tiporeclamo/tiporeclamo';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TiporeclamoProvider,
-    Camera
+    Camera,
+    TransferenciaProvider
   ]
 })
 export class AppModule {}

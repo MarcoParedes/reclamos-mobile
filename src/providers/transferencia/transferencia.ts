@@ -3,19 +3,20 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { TipoReclamo } from "../../models/TipoReclamo";
+import { Transferencia } from '../../models/transferencia';
 
 @Injectable()
-export class TiporeclamoProvider {
+export class TransferenciaProvider {
 
   constructor(public http: HttpClient) {
+    
   }
 
-  public getTipoReclamo(): Observable<TipoReclamo[]> {
+  public getTransferencias(): Observable<Transferencia[]> {
     return this.http
-      .get('assets/data/tiporeclamo.json')
+      .get('assets/data/transferencias.json')
       .map(res => {
-         return res["tipoReclamo"].map((data) => data);
+         return res["transferencias"].map((data) => data);
       });
   }
 
