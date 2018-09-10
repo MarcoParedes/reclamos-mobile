@@ -2,13 +2,13 @@
   <ion-navbar color="primary-dark">
     <ion-buttons left>
       <button ion-button (click)="dismiss()">
-        <ion-icon name="close"></ion-icon>
+        <ion-icon class="size-20" name="close"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Artículos</ion-title>
     <ion-buttons right>
       <button ion-button (click)="Seleccionar()">
-        <ion-icon name="send"></ion-icon>
+        <ion-icon class="size-20" name="send"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -26,10 +26,4 @@
       <ion-checkbox [(ngModel)]="item.selected" item-start color="orange" checked="false"></ion-checkbox>
     </ion-item>
   </ion-list>
-
-  <!-- <ion-fab right bottom (click)="Seleccionar()">
-    <button ion-fab mini>
-        <ion-icon name="checkmark"></ion-icon>
-      </button>
-  </ion-fab> -->
 </ion-content>

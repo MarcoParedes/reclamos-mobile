@@ -3,7 +3,7 @@
   <ion-navbar color="primary-dark">
     <ion-buttons left>
       <button ion-button (click)="dismiss()">
-        <ion-icon name="close"></ion-icon>
+        <ion-icon class="size-20" name="close"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Transferencias</ion-title>
@@ -13,7 +13,7 @@
 
 
 <ion-content>
-
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar.."></ion-searchbar>
   <ion-list>
     <button ion-item *ngFor="let item of transferenciasList" (click)="Seleccionar($event, item)">
       <h2>

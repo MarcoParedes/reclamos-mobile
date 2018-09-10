@@ -2,8 +2,8 @@
   <ion-navbar color="primary-dark">
     <ion-title>Artículos Reclamo</ion-title>
     <ion-buttons right>
-      <button ion-button>
-        <ion-icon name="send"></ion-icon>
+      <button ion-button (click)="Enviar()">
+        <ion-icon class="size-20" name="send"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -21,7 +21,7 @@
         </button>
         <ion-item-options side="right">
           <button ion-button color="danger" (click)="QuitarArticulo(detalle)">
-            <ion-icon name="trash"></ion-icon>
+            <ion-icon name="trash"></ion-icon> Quitar
           </button>
         </ion-item-options>
     </ion-item-sliding>

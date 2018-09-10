@@ -6,7 +6,6 @@ import { Storage } from '@ionic/storage';
 import { TransferenciaProvider } from '../../../providers/transferencia/transferencia';
 
 import { Transferencia } from "../../../models/transferencia";
-import { Articulo } from "../../../models/articulo";
 
 @IonicPage()
 @Component({
@@ -34,6 +33,10 @@ export class TransferenciasPage {
 
   private Seleccionar(event: any, item: Transferencia) {
     this.viewCtrl.dismiss(item);
+  }
+
+  private getItems(ev: any): void {
+
   }
 
   private dismiss() {

@@ -17,6 +17,7 @@ export class ReclamoDetalle {
     public selected: boolean;
     public tipoCantidad: string;
     public imagen: string;
+    public rutaImagen: string;
     public color: string;
     public tipoReclamoList: TipoReclamo[];
     public cantidadAjustada: number;

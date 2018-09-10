@@ -19,7 +19,7 @@
   
   <div [ngSwitch]="segmento">
     <ion-list *ngSwitchCase="'articulos'">
-      <button ion-item *ngFor="let item of detalleReclamoList" (click)="presentActionSheet()">
+      <button ion-item *ngFor="let item of detalleReclamoList" (click)="presentActionSheet(item)">
         <h2>{{item.articulo.descripcion}}</h2>
         <p>{{item.articulo.idArticulo}}</p>
         <p>Unidades: {{item.cantidad}} Bultos: {{item.cantidad / item.uxb | number:'.0-2'}} </p>
@@ -30,9 +30,10 @@
     <ion-list *ngSwitchCase="'imagen'">
       <ion-item *ngFor="let item of imagenes">
         <ion-thumbnail item-start>
-          <img src="assets/imgs/{{item.imagen}}" imageViewer>
+          <img src="{{item.ruta}}" imageViewer *ngIf="item.imagen">
+          <img src="assets/imgs/files.png" *ngIf="!item.imagen">
         </ion-thumbnail>
-        <h2>{{item.nombre}}</h2>
+        <h2>{{item.articulo}}</h2>
       </ion-item>
     </ion-list>
   </div>

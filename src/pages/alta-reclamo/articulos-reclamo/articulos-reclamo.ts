@@ -40,4 +40,8 @@ export class ArticulosReclamoPage {
     this.detalleReclamoList.splice(index, 1);
   }
 
+  public Enviar(): void {
+    this.navCtrl.pop();
+  }
+
 }

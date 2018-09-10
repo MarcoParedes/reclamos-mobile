@@ -6,7 +6,7 @@
     <ion-title>Lista de reclamos</ion-title>
     <ion-buttons right>
       <button ion-button (click)="MostrarFiltros()">
-        <ion-icon name="search"></ion-icon>
+        <ion-icon class="size-20" name="search"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -16,11 +16,12 @@
   <ion-list class="lst-reclamos">
     <button ion-item *ngFor="let item of reclamosList" (click)="GetDetalle(item.nroReclamo)">
       <ion-icon color="{{item.bgColor}}" [name]="item.icono" item-start></ion-icon>
-      <h3>{{item.tipoReclamo.descripcion}} {{item.nroReclamo}}</h3>
+      <h3>{{item.tipoReclamo.descripcion}}</h3>
       <h4>{{item.cc}}</h4>
+      <p class="size-13">{{item.nroReclamo}}</p>
       <p class="size-13">{{item.prefijo}}-{{item.nroTransferencia}}</p>
       <p class="size-13">{{item.fechaGeneracion | date:'dd/MM/yyyy'}}</p>
-      <p class="size-13" item-end>{{item.estado}}</p>
+      <span class="size-13" item-end>{{item.estado}}</span>
     </button>
   </ion-list>
 

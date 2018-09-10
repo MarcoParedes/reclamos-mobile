@@ -19,4 +19,13 @@ export class TiporeclamoProvider {
       });
   }
 
+
+  public getTiposReclamoxIdbFamilia(idEmpresa: number, idRegion: number, idb: number, idSector: number, idSeccion: number, idGranFlia: number): Observable<TipoReclamo[]> {
+    return this.http
+      .get('assets/data/tiporeclamoxFamilia.json')
+      .map(res => {
+         return res["tipoReclamo"].map((data) => data);
+      });
+  }
+
 }
